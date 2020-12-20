@@ -1,41 +1,40 @@
-# Contributing to DetectionLab
+# Contributing to Identity Lab
 
-Please feel free to make contributions to DetectionLab that fit into any of the following categories:
+I am certainly not going to get everything right! Feel free to make contributions to Identity Lab, especially:
 
 * Bug fixes
-* Improvements to existing configurations
+* Configuration enhancements
 * Feature additions/enhancements
 * Tooling additions/improvements
 
-The following types of changes should be maintained on a personal fork and should **not** submitted as a PR:
+Note that many of the features in Identity Lab are based on Detection Lab. While I strive to contribute enhancements to the upstream Detection Lab project, consider supporting that project directly also.
 
-* [Switching out existing tooling based on personal taste](https://github.com/clong/DetectionLab/issues/43) (e.g. replacing Splunk with ELK)
-* [Adding additional Boxes/VMs](https://github.com/clong/DetectionLab/issues/125)
-* Any changes that result in drastically longer build times
-* Any configurations that are not portable
+The following types of changes should be maintained on a personal fork and should **not** be submitted as a PR:
 
+* Switching out software purely for personal taste (e.g. replacing Splunk with ELK)
+* Changes that are not portable
+
+Adding additional boxes / VMs should be considered carefully.
+
+* Is your addition something that would benefit the entire community?
+* Does it use proprietary or licensed software that others can not run legally?
+* Does it represent a risk to your employer by exposing potentially sensitive configurations, data, or topography?
 
 ### Pull requests
 
-All contributions are submitted via pull requests open against the
-[master](https://github.com/clong/DetectionLab/tree/master) branch. Pull requests are all reviewed and must pass continuous integration tests before being merged.
+All contributions are submitted via pull requests open against the [master](https://github.com/ealaney/IdentityLab/tree/master) branch.
 
 If you're unfamiliar with GitHub or how pull requests work, GitHub has a very easy to follow guide
 that teaches you how to fork the project and submit your first PR. You can follow it
 [here](https://guides.github.com/activities/forking/).
 
-Once you submit your PR, it will be held for approval until someone manually approves the CI test on CircleCI.
+Once you submit your PR, it will be held for approval.
 
-If the test fails or the reviewer requests changes, please submit those changes by **appending new
-commits** to your feature branch.
+If the reviewer requests changes, please submit those changes by **appending new commits** to your feature branch.
 
-Once your pull request is approved and the CircleCI build passes, the PR is ready to merge. A maintainer will merge your PR into master at this point in time.
-
-### Branches and tags
-
-The DetectionLab repo contains only the [master](https://github.com/clong/DetectionLab/tree/master) branch. I don't keep feature or release branches.
+Once your pull request is approved, the PR is ready to merge. A maintainer will merge your PR into master at this point in time.
 
 ## License
 
-By contributing to DetectionLab you agree that your contributions will be licensed as defined on the
+By contributing to IdentityLab you agree that your contributions will be licensed as defined on the
 [LICENSE](LICENSE) file.
