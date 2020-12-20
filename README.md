@@ -38,5 +38,5 @@ In progress.
 ---
 
 ## Contributing
-Please do all of your development in a feature branch on your own fork of DetectionLab.
+Please do all of your development in a feature branch on your own fork of IdentityLab.
 Contribution guidelines can be found here: [CONTRIBUTING.md](./CONTRIBUTING.md)
