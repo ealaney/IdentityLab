@@ -97,6 +97,19 @@ if (Get-Process -ProcessName explorer -ErrorAction 'silentlycontinue') {
   Stop-Process -ProcessName explorer -Force
 }
 
+# Adding this to workaround a problem with the install script supplied by Palantir
+if (-Not (Test-Path "C:\Program Files\AutorunsToWinEventLog")) {
+  New-Item -Path "C:\Program Files\AutorunsToWinEventLog" -ItemType Directory | Out-Null
+}
+$autorunscPath = "c:\Program Files\AutorunsToWinEventLog\Autorunsc64.exe"
+Write-Host "$('[{0:HH:mm}]' -f (Get-Date)) Downloading Autorunsc64.exe..."
+Try { 
+  (New-Object System.Net.WebClient).DownloadFile('https://live.sysinternals.com/Autorunsc64.exe', $autorunscPath) 
+} Catch { 
+  Write-Host "HTTPS connection failed. Switching to HTTP :("
+  (New-Object System.Net.WebClient).DownloadFile('http://live.sysinternals.com/Autorunsc64.exe', $autorunscPath) 
+}
+
 # Download Olaf Hartongs Sysmon config
 Write-Host "$('[{0:HH:mm}]' -f (Get-Date)) Downloading Olaf Hartong's Sysmon config..."
 (New-Object System.Net.WebClient).DownloadFile('https://raw.githubusercontent.com/olafhartong/sysmon-modular/master/sysmonconfig.xml', "$sysmonConfigPath")
