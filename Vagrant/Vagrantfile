@@ -5,6 +5,7 @@ Vagrant.configure("2") do |config|
     cfg.vm.hostname = "logger"
     cfg.vm.synced_folder '.', '/vagrant'
     cfg.vm.provision :shell, path: "logger_bootstrap.sh"
+    cfg.vm.provision "shell", inline: "apt-fast -qq install -y build-essential git unzip bash-completion mlocate tmux apt-transport-https dkms linux-headers-$(uname -r)"
     cfg.vm.network :private_network, ip: "192.168.38.105", gateway: "192.168.38.1", dns: "8.8.8.8"
 
     cfg.vm.provider "vmware_desktop" do |v, override|
@@ -20,7 +21,7 @@ Vagrant.configure("2") do |config|
       vb.customize ["modifyvm", :id, "--memory", 4096]
       vb.customize ["modifyvm", :id, "--cpus", 2]
       vb.customize ["modifyvm", :id, "--graphicscontroller", "vmsvga"]
-      vb.customize ["modifyvm", :id, "--vram", "32"]
+      vb.customize ["modifyvm", :id, "--vram", "9"]
       vb.customize ["modifyvm", :id, "--nicpromisc2", "allow-all"]
       vb.customize ["modifyvm", :id, "--clipboard", "bidirectional"]
       vb.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
@@ -247,7 +248,8 @@ Vagrant.configure("2") do |config|
     cfg.vm.box = "bento/ubuntu-20.04"
     cfg.vm.hostname = "iam"
     cfg.vm.synced_folder '.', '/vagrant'
-    # cfg.vm.provision :shell, path: "logger_bootstrap.sh"
+    # cfg.vm.provision :shell, path: "iam_bootstrap.sh"
+    cfg.vm.provision "shell", inline: "apt-get -qq install -y build-essential git unzip bash-completion mlocate tmux apt-transport-https dkms linux-headers-$(uname -r)"
     cfg.vm.network :private_network, ip: "192.168.38.106", gateway: "192.168.38.1", dns: "8.8.8.8"
 
     cfg.vm.provider "vmware_desktop" do |v, override|
@@ -263,7 +265,7 @@ Vagrant.configure("2") do |config|
       vb.customize ["modifyvm", :id, "--memory", 4096]
       vb.customize ["modifyvm", :id, "--cpus", 2]
       vb.customize ["modifyvm", :id, "--graphicscontroller", "vmsvga"]
-      vb.customize ["modifyvm", :id, "--vram", "32"]
+      vb.customize ["modifyvm", :id, "--vram", "9"]
       vb.customize ["modifyvm", :id, "--nicpromisc2", "allow-all"]
       vb.customize ["modifyvm", :id, "--clipboard", "bidirectional"]
       vb.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
