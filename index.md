@@ -1,37 +1,54 @@
-## Welcome to GitHub Pages
+# Identity Lab
 
-You can use the [editor on GitHub](https://github.com/ealaney/IdentityLab/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+IdentityLab seeks to provide an automated, standardized way in which to explore Identity and Access Management (IAM) topics, procedures, and products.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+## Purpose
 
-### Markdown
+When exploring Identity and Access Management concepts and software, one of the big challenges is trying to experiment with realistic scenarios and data while protecting the production environments that you want to ultimately protect.
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+This lab seeks to allow the user to explore Identity and Access Management (IAM) concepts, ideas, practices, and products, using the most common infrastructure and endpoints. By building on top of the DetectionLab project, IdentityLab provides a Windows domain with security tools and best practices for system logging, enabling easier review of the impact of IAM products and procedures.
 
-```markdown
-Syntax highlighted code block
+Using the BadBlood toolkit, it is possible to populate the Active Directory domain with test data.  This can aid in IAM experiments that target Active Directory and Windows.
 
-# Header 1
-## Header 2
-### Header 3
+The IAM server includes scripts to install and configure the following IAM products:
 
-- Bulleted
-- List
+* []
+* [WSO2 Identity Server](https://wso2.com/identity-and-access-management/) (or see it on [GitHub](https://github.com/wso2/product-is/releases/latest))
 
-1. Numbered
-2. List
+---
 
-**Bold** and _Italic_ and `Code` text
+NOTE: The DetectionLab warning bears repeating. This lab has not been hardened and runs with default vagrant credentials. Please do not connect or bridge it to any networks you care about. This lab is deliberately designed to be insecure; the primary purpose of it is to provide visibility and introspection into each host.
 
-[Link](url) and ![Image](src)
-```
+## Acknowledgements
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+IdentityLab stands on the shoulders of Chris Long's excellent DetectionLab project. Read more about Detection Lab on the [project web site](https://detectionlab.network/) or on [GitHub](https://github.com/clong/DetectionLab) or on [Medium](https://medium.com/@clong/introducing-detection-lab-61db34bed6ae)
 
-### Jekyll Themes
+## Building Identity Lab
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/ealaney/IdentityLab/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+*Note*: If you only want to run hosts, you only need a valid, working Vagrant environment.
 
-### Support or Contact
+Being based on Detection Lab, Identity Lab has the same requirements. Check the Detection Lab requirements as described in the following links.
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+* [Prerequisites](https://www.detectionlab.network/introduction/prerequisites/)
+* [MacOS - Virtualbox or VMware Fusion](https://www.detectionlab.network/deployment/macosvm/)
+* [Windows - Virtualbox or VMware Workstation](https://www.detectionlab.network/deployment/windowsvm/)
+* [Linux - Virtualbox or VMware Workstation](https://www.detectionlab.network/deployment/linuxvm/)
+* [AWS via Terraform](https://www.detectionlab.network/deployment/aws/)
+* [Azure via Terraform & Ansible](https://www.detectionlab.network/deployment/azure/)
+* [ESXi via Terraform & Ansible](https://www.detectionlab.network/deployment/esxi/)
+* [HyperV](https://www.detectionlab.network/deployment/hyperv/)
+* [LibVirt](https://www.detectionlab.network/deployment/libvirt/)
+
+---
+
+## Documentation
+
+In progress.
+
+---
+
+## Contributing
+
+Do you have an IAM solution or package that you would like to see included in Identity Lab?  Open an issue 
+Please do all of your development in a feature branch on your own fork of IdentityLab.
+Contribution guidelines can be found here: [CONTRIBUTING.md](./CONTRIBUTING.md)
