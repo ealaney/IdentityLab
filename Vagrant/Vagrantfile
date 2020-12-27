@@ -248,8 +248,7 @@ Vagrant.configure("2") do |config|
     cfg.vm.box = "bento/ubuntu-20.04"
     cfg.vm.hostname = "iam"
     cfg.vm.synced_folder '.', '/vagrant'
-    # cfg.vm.provision :shell, path: "iam_bootstrap.sh"
-    cfg.vm.provision "shell", inline: "apt-get -qq install -y build-essential git unzip bash-completion mlocate tmux apt-transport-https dkms linux-headers-$(uname -r)"
+    cfg.vm.provision :shell, path: "iam_bootstrap.sh"
     cfg.vm.network :private_network, ip: "192.168.38.106", gateway: "192.168.38.1", dns: "8.8.8.8"
 
     cfg.vm.provider "vmware_desktop" do |v, override|

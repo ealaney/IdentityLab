@@ -37,11 +37,12 @@ apt_install_prerequisites() {
   # Install prerequisites and useful tools
   echo "[$(date +%H:%M:%S)]: Running apt-get clean..."
   apt-get clean
-  echo "[$(date +%H:%M:%S)]: Running apt-get update..."
-  apt-get -qq update
+  echo "[$(date +%H:%M:%S)]: Installing apt-fast..."
   apt-get -qq install -y apt-fast
+  echo "[$(date +%H:%M:%S)]: Running apt-get update..."
+  apt-fast -qq -y update
   echo "[$(date +%H:%M:%S)]: Running apt-fast install..."
-  apt-fast -qq install -y jq whois build-essential git unzip htop yq mysql-server redis-server python-pip
+  apt-fast -qq -y install jq whois build-essential git unzip htop yq mysql-server redis-server python-pip
 }
 
 modify_motd() {
