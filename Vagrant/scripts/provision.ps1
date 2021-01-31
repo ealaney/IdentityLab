@@ -15,14 +15,14 @@ If (!(Test-Path $ProfilePath)) {
   Write-Host "$('[{0:HH:mm}]' -f (Get-Date)) Disabling the Invoke-WebRequest download progress bar globally for speed improvements." 
   Write-Host "$('[{0:HH:mm}]' -f (Get-Date)) See https://github.com/PowerShell/PowerShell/issues/2138 for more info"
   New-Item -Path $ProfilePath | Out-Null
-  If (!(Get-Content $Profilepath| % { $_ -match "SilentlyContinue" } )) {
+  If (!(Get-Content $Profilepath| ForEach-Object { $_ -match "SilentlyContinue" } )) {
     Add-Content -Path $ProfilePath -Value "$ProgressPreference = 'SilentlyContinue'"
   }
 }
 
 # Ping DetectionLab server for usage statistics
 Try {
-  curl -userAgent "DetectionLab-$box" "https://ping.detectionlab.network/$box" -UseBasicParsing | out-null
+  Invoke-WebRequest -userAgent "DetectionLab-$box" "https://ping.detectionlab.network/$box" -UseBasicParsing | out-null
 } Catch {
   Write-Host "Unable to connect to ping.detectionlab.network"
 }
@@ -40,7 +40,7 @@ if ($env:COMPUTERNAME -imatch 'vagrant') {
   Write-Host "$('[{0:HH:mm}]' -f (Get-Date)) Installing bginfo..."
   . c:\vagrant\scripts\install-bginfo.ps1
 
-} elseif ((gwmi win32_computersystem).partofdomain -eq $false) {
+} elseif ((Get-WmiObject win32_computersystem).partofdomain -eq $false) {
 
   Write-Host "$('[{0:HH:mm}]' -f (Get-Date)) Current domain is set to 'workgroup'. Time to join the domain!"
 
