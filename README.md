@@ -6,9 +6,7 @@ IdentityLab seeks to provide an automated, standardized way in which to explore 
 
 When exploring Identity and Access Management concepts and software, one of the big challenges is trying to experiment with realistic scenarios and data while protecting the production environments that you want to ultimately protect.
 
-This lab seeks to allow the user to explore Identity and Access Management (IAM) concepts, ideas, practices, and products, using the most common infrastructure and endpoints. By building on top of the DetectionLab project, IdentityLab provides a Windows domain with security tools and best practices for system logging, enabling easier review of the impact of IAM products and procedures.
-
-Using the BadBlood toolkit, it is possible to populate the Active Directory domain with test data.  This can aid in IAM experiments that target Active Directory and Windows.
+This lab seeks to allow the user to explore Identity and Access Management (IAM) concepts, ideas, practices, and products, using the most common infrastructure and endpoint types. Providing a hands-on approach instead of a theoretical one has always worked better for me, and I hope it does for you too.
 
 ## Products
 
@@ -33,23 +31,36 @@ NOTE: The DetectionLab warning bears repeating. This lab has not been hardened a
 
 ## Acknowledgements
 
-IdentityLab stands on the shoulders of Chris Long's excellent DetectionLab project. Read more about Detection Lab on the [project web site](https://detectionlab.network/) or on [GitHub](https://github.com/clong/DetectionLab) or on [Medium](https://medium.com/@clong/introducing-detection-lab-61db34bed6ae)
+IdentityLab stands on the shoulders of Chris Long's excellent DetectionLab project. Read more about Detection Lab on the [project web site](https://detectionlab.network/) or on [GitHub](https://github.com/clong/DetectionLab) or on [Medium](https://medium.com/@clong/introducing-detection-lab-61db34bed6ae). By incorporating the DetectionLab project, IdentityLab is able to provide a Windows domain with security tools and consolidated system logging, enabling easier review of the impact of IAM products and procedures.
+
+IdentityLab also incorporates the [BadBlood](https://kalilinuxtutorials.com/badblood/) toolkit, making it possible to populate the Active Directory domain with test data.  This can aid in IAM experiments that target Active Directory and Windows. You can get more information on the [project web site](https://kalilinuxtutorials.com/badblood/) or on [GitHub](https://github.com/davidprowe/badblood). *Caution: BadBlood makes irrevocable changes to the AD domain against which it runs.*
+
+The sample applications are mostly from the [WSO2](https://wso2.com/) Sample Applications project. You can read more in the WSO2 [Tutorial](https://is.docs.wso2.com/en/5.10.0/learn/deploying-the-sample-app/) or check out the [GitHub repo](https://github.com/wso2/samples-is/).
 
 ## Building Identity Lab
 
-*Note*: If you only want to run hosts, you only need a valid, working Vagrant environment.
+If you only want to run hosts, you only need a valid, working Vagrant environment with sufficient resources to run the machine images. If you want to customize the machine images used in Identity Lab, you will need additional tools and resources.
 
-Being based on Detection Lab, Identity Lab has the same requirements. Check the Detection Lab requirements as described in the following links.
+### Running with Vagrant
 
-* [Prerequisites](https://www.detectionlab.network/introduction/prerequisites/)
-* [MacOS - Virtualbox or VMware Fusion](https://www.detectionlab.network/deployment/macosvm/)
-* [Windows - Virtualbox or VMware Workstation](https://www.detectionlab.network/deployment/windowsvm/)
-* [Linux - Virtualbox or VMware Workstation](https://www.detectionlab.network/deployment/linuxvm/)
-* [AWS via Terraform](https://www.detectionlab.network/deployment/aws/)
-* [Azure via Terraform & Ansible](https://www.detectionlab.network/deployment/azure/)
-* [ESXi via Terraform & Ansible](https://www.detectionlab.network/deployment/esxi/)
-* [HyperV](https://www.detectionlab.network/deployment/hyperv/)
-* [LibVirt](https://www.detectionlab.network/deployment/libvirt/)
+Identity Lab was developed on Windows using Vagrant 2.2.14 with an Oracle VirtualBox 6.1 provider. Vagrant supports other host OSes and providers, but while those should work fine, they have not been tested. At this time, I cannot provide assistance with other providers as I lack the necessary resources.
+
+* 55GB+ of free disk space
+* 16GB+ of RAM highly recommended (for reference, my test machine has 32GB)
+* Vagrant 2.2.9+
+* Oracle VM VirtualBox 6.1.16+
+
+*Note*: I encountered a bug in VirtualBox 6.1.14 that caused Vagrant machine builds to fail. This bug was fixed in 6.1.16.
+
+### Customizing Images
+
+If you want to customize the machine images by building your own Vagrant boxes, you will also need the following resources:
+
+* Packer 1.6.0+
+
+Incorporating the Detection Lab project means Identity Lab has many of the same requirements. You should also check the Detection Lab requirements as described on the project web site. These resources may provide enough information to get Identity Lab running on a different Vagrant provider, such as LibVirt or AWS.
+
+* [DetectionLab Prerequisites](https://www.detectionlab.network/introduction/prerequisites/)
 
 ---
 

@@ -2,12 +2,12 @@
 
 I am certainly not going to get everything right! Feel free to make contributions to Identity Lab, especially:
 
-* Bug fixes
+* Bug fixes / reports
 * Configuration enhancements
-* Feature additions/enhancements
-* Tooling additions/improvements
+* Feature additions / enhancements
+* Tooling additions / improvements
 
-Note that many of the features in Identity Lab are based on Detection Lab. While I strive to contribute enhancements to the upstream Detection Lab project, consider supporting that project directly also.
+Note that some of the features in Identity Lab are based on Chris Long's Detection Lab. While I strive to pull updates from and contribute enhancements to the upstream Detection Lab project, consider supporting that project directly also.
 
 The following types of changes should be maintained on a personal fork and should **not** be submitted as a PR:
 
@@ -20,13 +20,11 @@ Adding additional boxes / VMs should be considered carefully.
 * Does it use proprietary or licensed software that others can not run legally?
 * Does it represent a risk to your employer by exposing potentially sensitive configurations, data, or topography?
 
-### Pull requests
+## Pull requests
 
 All contributions are submitted via pull requests open against the [master](https://github.com/ealaney/IdentityLab/tree/master) branch.
 
-If you're unfamiliar with GitHub or how pull requests work, GitHub has a very easy to follow guide
-that teaches you how to fork the project and submit your first PR. You can follow it
-[here](https://guides.github.com/activities/forking/).
+If you're unfamiliar with GitHub or how pull requests work, GitHub has a very easy to follow guide that teaches you how to fork the project and submit your first PR. You can follow it [here](https://guides.github.com/activities/forking/).
 
 Once you submit your PR, it will be held for approval.
 
@@ -36,5 +34,4 @@ Once your pull request is approved, the PR is ready to merge. A maintainer will 
 
 ## License
 
-By contributing to IdentityLab you agree that your contributions will be licensed as defined on the
-[LICENSE](LICENSE) file.
+By contributing to IdentityLab you agree that your contributions will be licensed as defined on the [LICENSE](LICENSE) file.
