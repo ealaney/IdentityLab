@@ -1,6 +1,6 @@
 # Identity Lab
 
-IdentityLab seeks to provide an automated, standardized way in which to explore Identity and Access Management (IAM) topics, procedures, and products.
+Identity Lab seeks to provide an automated, standardized way in which to explore Identity and Access Management (IAM) topics, procedures, and products.
 
 ## Purpose
 
@@ -12,7 +12,7 @@ This lab seeks to allow the user to explore Identity and Access Management (IAM)
 
 The IAM server includes scripts to install and configure the following IAM products:
 
-* [WSO2 Identity Server](https://wso2.com/identity-and-access-management/) [on GitHub](https://github.com/wso2/product-is/releases/latest)
+* [WSO2 Identity Server](https://wso2.com/identity-and-access-management/) (also on [GitHub](https://github.com/wso2/product-is/releases/latest))
 
 ### Products Under Consideration
 
@@ -27,13 +27,13 @@ The IAM server includes scripts to install and configure the following IAM produ
 
 ---
 
-NOTE: The DetectionLab warning bears repeating. This lab has not been hardened and runs with default vagrant credentials. Please do not connect or bridge it to any networks you care about. This lab is deliberately designed to be insecure; the primary purpose of it is to provide visibility and introspection into each host.
+**NOTE**: This lab is deliberately designed to be insecure. It has not been hardened and runs with default vagrant credentials. Its primary purpose is to provide visibility into each application, host, and resource. Please do not connect or bridge it to any networks you care about.
 
 ## Acknowledgements
 
-IdentityLab stands on the shoulders of Chris Long's excellent DetectionLab project. Read more about Detection Lab on the [project web site](https://detectionlab.network/) or on [GitHub](https://github.com/clong/DetectionLab) or on [Medium](https://medium.com/@clong/introducing-detection-lab-61db34bed6ae). By incorporating the DetectionLab project, IdentityLab is able to provide a Windows domain with security tools and consolidated system logging, enabling easier review of the impact of IAM products and procedures.
+Identity Lab incorporates Chris Long's excellent Detection Lab project. Detection Lab demonstrated how to automated the building of a Windows Domain Controller, a task that had previously seemed too massive to tackle. Once I cleared that hurdle, the rest of the path became clear. Read more about Detection Lab on the [project web site](https://detectionlab.network/) or on [GitHub](https://github.com/clong/DetectionLab) or on [Medium](https://medium.com/@clong/introducing-detection-lab-61db34bed6ae). By incorporating the Detection Lab project, Identity Lab is able to provide a Windows domain with security tools and consolidated system logging, enabling easier review of the impact of IAM products and procedures.
 
-IdentityLab also incorporates the [BadBlood](https://kalilinuxtutorials.com/badblood/) toolkit, making it possible to populate the Active Directory domain with test data.  This can aid in IAM experiments that target Active Directory and Windows. You can get more information on the [project web site](https://kalilinuxtutorials.com/badblood/) or on [GitHub](https://github.com/davidprowe/badblood). *Caution: BadBlood makes irrevocable changes to the AD domain against which it runs.*
+Identity Lab also incorporates the [BadBlood](https://kalilinuxtutorials.com/badblood/) toolkit, populating the lab's Active Directory domain with test data.  This can aid in IAM experiments that target Active Directory and Windows. You can get more information on the [project web site](https://kalilinuxtutorials.com/badblood/) or on [GitHub](https://github.com/davidprowe/badblood). **Caution: BadBlood makes irrevocable changes to the AD domain against which it runs.**
 
 The sample applications are mostly from the [WSO2](https://wso2.com/) Sample Applications project. You can read more in the WSO2 [Tutorial](https://is.docs.wso2.com/en/5.10.0/learn/deploying-the-sample-app/) or check out the [GitHub repo](https://github.com/wso2/samples-is/).
 
@@ -43,14 +43,14 @@ If you only want to run hosts, you only need a valid, working Vagrant environmen
 
 ### Running with Vagrant
 
-Identity Lab was developed on Windows using Vagrant 2.2.14 with an Oracle VirtualBox 6.1 provider. Vagrant supports other host OSes and providers, but while those should work fine, they have not been tested. At this time, I cannot provide assistance with other providers as I lack the necessary resources.
+Identity Lab was developed on Windows and Ubuntu Linux using Vagrant 2.2.14 with an Oracle VirtualBox 6.1 provider. Vagrant supports other host OSes and providers, but while those should work fine, they have not been tested. At this time, I cannot provide assistance with other providers.
 
 * 55GB+ of free disk space
-* 16GB+ of RAM highly recommended (for reference, my test machine has 32GB)
+* 16GB+ of RAM highly recommended (for reference, my test machine has 32GB and 48GB, respectively)
 * Vagrant 2.2.9+
 * Oracle VM VirtualBox 6.1.16+
 
-*Note*: I encountered a bug in VirtualBox 6.1.14 that caused Vagrant machine builds to fail. This bug was fixed in 6.1.16.
+**Note**: I encountered a bug in VirtualBox 6.1.14 that caused Vagrant machine builds to fail. This bug was fixed in 6.1.16.
 
 ### Customizing Images
 
@@ -60,7 +60,7 @@ If you want to customize the machine images by building your own Vagrant boxes, 
 
 Incorporating the Detection Lab project means Identity Lab has many of the same requirements. You should also check the Detection Lab requirements as described on the project web site. These resources may provide enough information to get Identity Lab running on a different Vagrant provider, such as LibVirt or AWS.
 
-* [DetectionLab Prerequisites](https://www.detectionlab.network/introduction/prerequisites/)
+* [Detection Lab Prerequisites](https://www.detectionlab.network/introduction/prerequisites/)
 
 ---
 
@@ -74,4 +74,4 @@ In progress.
 
 Do you have an IAM solution or package that you would like to see included in Identity Lab?  Open an issue and let's discuss it!
 
-If you want to contribute code, please do all of your development in a feature branch on your own fork of IdentityLab. Contribution guidelines can be found here: [CONTRIBUTING.md](./CONTRIBUTING.md)
+If you want to contribute code, please do all of your development in a feature branch on your own fork of Identity Lab. Contribution guidelines can be found here: [CONTRIBUTING.md](./CONTRIBUTING.md)
