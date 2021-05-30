@@ -116,6 +116,11 @@ variable "wef_ami" {
   default = ""
 }
 
+variable "exchange_ami" {
+  type    = string
+  default = ""
+}
+
 variable "win10_ami" {
   type    = string
   default = ""

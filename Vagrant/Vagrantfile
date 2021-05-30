@@ -1,5 +1,7 @@
 Vagrant.configure("2") do |config|
 
+  config.vagrant.plugins = ["vagrant-reload"]
+
   config.vm.define "logger" do |cfg|
     cfg.vm.box = "bento/ubuntu-18.04"
     cfg.vm.hostname = "logger"
