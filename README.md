@@ -29,6 +29,39 @@ The IAM server includes scripts to install and configure the following IAM produ
 
 **NOTE**: This lab is deliberately designed to be insecure. It has not been hardened and runs with default vagrant credentials. Its primary purpose is to provide visibility into each application, host, and resource. Please do not connect or bridge it to any networks you care about.
 
+## Roadmap
+
+Identity Lab is currently in heavy development and not yet in a turnkey-usable state. I try to regularly incorporate updates from the upstream Detection Lab project, but I can't make promises as to timeliness. See the Roadmap below for priorities and progress.
+
+### Current Priorities
+
+Current Version: 0.0 (pre-release)
+
+1. Improve reliability of VM provisioning (VirtualBox). (In progress)
+1. Complete the "web" VM that incorporates the WSO2 Sample Applications for demonstration of inventory, provisioning, and SSO. (VirtualBox)
+1. Complete the "iam" VM that provides the WSO2 Identity Server. (Project 1.0 milestone, first turnkey version.) (VirtualBox)
+1. Decision point: Complete the 1.0 milestone for other Vagrant providers (e.g., LibVirt, Hyper-V) or proceed to 2.0 under VirtualBox?
+
+### Version Roadmap
+
+Naturally, this is all subject to change. Under each major version is the same minor version release schedule, based on the Vagrant providers. Providers that require a financial commitment (i.e., AWS, Azure) may be delayed depending on how my finances are going, and unless I discover a way to run ESXi on the cheap, it probably won't ever be supported.
+
+Bug fix releases will be reflected in the build version number (e.g., x.x.1, x.x.2).
+
+1. Version 1.0: WSO2 Identity Server under VirtualBox
+    1. Version 1.1: WSO2 Identity Server under LibVirt
+    1. Version 1.2: WSO2 Identity Server under Hyper-V
+    1. Version 1.4: WSO2 Identity Server under AWS (depends on financial resources)
+    1. Version 1.3: WSO2 Identity Server under Azure (depends on financial resources)
+1. Version 2.0: Aerobase
+1. Version 3.0: Apache Syncope
+1. Version 4.0 Central Authentication Services (CAS)
+1. Version 5.0 FreeIPA
+1. Version 6.0 MidPoint
+1. Version 7.0 OpenIAM
+1. Version 8.0 Shibboleth
+1. Version 9.0 Soffid
+
 ## Acknowledgements
 
 Identity Lab incorporates Chris Long's excellent Detection Lab project. Detection Lab demonstrated how to automated the building of a Windows Domain Controller, a task that had previously seemed too massive to tackle. Once I cleared that hurdle, the rest of the path became clear. Read more about Detection Lab on the [project web site](https://detectionlab.network/) or on [GitHub](https://github.com/clong/DetectionLab) or on [Medium](https://medium.com/@clong/introducing-detection-lab-61db34bed6ae). By incorporating the Detection Lab project, Identity Lab is able to provide a Windows domain with security tools and consolidated system logging, enabling easier review of the impact of IAM products and procedures.
